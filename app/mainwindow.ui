@@ -355,14 +355,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>AllContacts</sender>
+   <sender>allContacts</sender>
    <signal>clicked()</signal>
    <receiver>AllContactsFrame</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>580</x>
-     <y>374</y>
+     <x>360</x>
+     <y>164</y>
     </hint>
     <hint type="destinationlabel">
      <x>645</x>
@@ -371,14 +371,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>AllContacts</sender>
+   <sender>allContacts</sender>
    <signal>toggled(bool)</signal>
    <receiver>AllContactsFrame</receiver>
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>580</x>
-     <y>374</y>
+     <x>360</x>
+     <y>164</y>
     </hint>
     <hint type="destinationlabel">
      <x>645</x>
@@ -387,14 +387,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>AllContacts</sender>
+   <sender>allContacts</sender>
    <signal>released()</signal>
    <receiver>MainWindow</receiver>
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>580</x>
-     <y>374</y>
+     <x>360</x>
+     <y>164</y>
     </hint>
     <hint type="destinationlabel">
      <x>399</x>
@@ -403,14 +403,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>AllContacts</sender>
+   <sender>allContacts</sender>
    <signal>toggled(bool)</signal>
    <receiver>AllContactsTxt</receiver>
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>580</x>
-     <y>374</y>
+     <x>360</x>
+     <y>164</y>
     </hint>
     <hint type="destinationlabel">
      <x>645</x>
