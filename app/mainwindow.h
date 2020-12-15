@@ -9,6 +9,7 @@
 #include <random>
 #include <string>
 #include <QInputDialog>
+#include "name.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
