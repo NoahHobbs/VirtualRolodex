@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "database.h"
+#include "name.h"
 #include <QRegExpValidator>
 #include <QtDebug>
 MainWindow::MainWindow(QWidget *parent)
@@ -28,8 +29,10 @@ void MainWindow::on_SaveContactButton_clicked()
 {
     //Clears the 3 text fields in the form and saves the entered information
     Database();
+    class name toCaps;
     QSqlQuery query;
     QString nameText = ui->NameTxtBox->toPlainText();
+
     QString phoneText = ui->PhoneTxtBox->toPlainText();
     QString emailText = ui->EmailTxtBox->toPlainText();
     //using regex to test user input
@@ -40,9 +43,9 @@ void MainWindow::on_SaveContactButton_clicked()
     QRegularExpressionMatch emailMatch = emailValid.match(emailText);
     QRegularExpressionMatch phoneMatch = phoneValid.match(phoneText);
     if (nameMatch.hasMatch() && emailMatch.hasMatch() && phoneMatch.hasMatch()) {
-
+        QString capsName = toCaps.capsName(nameText);
         query.prepare("INSERT INTO Contacts (name, phone, email) VALUES (:name, :phone, :email)");
-        query.bindValue(":name", nameText);
+        query.bindValue(":name", capsName);
         query.bindValue(":phone", phoneText);
         query.bindValue(":email", emailText);
         query.exec();
