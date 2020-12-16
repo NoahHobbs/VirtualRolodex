@@ -10,9 +10,6 @@ QString email::checkEmail(QString e) {
     list[0] = list[0].toLower();
     list[1] = list[1].toLower();
     list[2] = list[2].toLower();
-    qDebug() << list[0];
-    qDebug() << list[1];
-    qDebug() << list[2];
     QString join = list[0] + "@" + list[1] + "." + list[2];
     return join;
 }
