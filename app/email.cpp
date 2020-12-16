@@ -7,11 +7,6 @@ email::email()
 
 QString email::checkEmail(QString e) {
     QStringList list = e.split(QRegExp("[@\\.]"), QString::SkipEmptyParts);
-    qDebug() << list;
-    //for ( const auto& i : list  )
-    //{
-    //    list += i.toLower();
-    //}
     list[0] = list[0].toLower();
     list[1] = list[1].toLower();
     list[2] = list[2].toLower();

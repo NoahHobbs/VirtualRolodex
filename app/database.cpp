@@ -6,7 +6,7 @@ Database::Database()
     if(!QSqlDatabase::isDriverAvailable(DRIVER)) {
         qWarning() << "ERROR: driver not available";
     }
-    QString path = "/Users/jasonhobbs/Documents/";
+    QString path = "/tmp/";
     QSqlDatabase db = QSqlDatabase::addDatabase(DRIVER);
     db.setDatabaseName(path + "contacts");
     if(!db.open()) {
@@ -32,7 +32,7 @@ void Database::createContact(long long contactId) {
 
 void Database::rebuildTestDatabase() {
     QSqlQuery query;
-    // (re)create table
+    // create table
     query.exec("CREATE TABLE Contacts (contactId INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Email TEXT, Phone TEXT)");
 
     QSqlQuery insertContact;
