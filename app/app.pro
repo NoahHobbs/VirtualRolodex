@@ -10,16 +10,16 @@ CONFIG += c++11
 
 SOURCES += \
     Database.cpp \
-    email.cpp \
     main.cpp \
     mainwindow.cpp \
-    name.cpp
+    name.cpp \
+    phone.cpp
 
 HEADERS += \
     Database.h \
-    email.h \
     mainwindow.h \
-    name.h
+    name.h \
+    phone.h
 
 FORMS += \
     mainwindow.ui
