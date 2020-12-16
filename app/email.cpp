@@ -5,10 +5,19 @@ email::email()
 
 }
 
-QString emailLower(QString e) {
-    QStringList parts = e.split('@', QString::SkipEmptyParts);
-        for (int i = 0; i < parts.size(); ++i)
-            parts[i].replace(0, 1, parts[i][0].toLower());
-
-        return parts.join(" ");
+QString email::checkEmail(QString e) {
+    QStringList list = e.split(QRegExp("[@\\.]"), QString::SkipEmptyParts);
+    qDebug() << list;
+    //for ( const auto& i : list  )
+    //{
+    //    list += i.toLower();
+    //}
+    list[0] = list[0].toLower();
+    list[1] = list[1].toLower();
+    list[2] = list[2].toLower();
+    qDebug() << list[0];
+    qDebug() << list[1];
+    qDebug() << list[2];
+    QString join = list[0] + "@" + list[1] + "." + list[2];
+    return join;
 }

@@ -1,14 +1,16 @@
 #ifndef EMAIL_H
 #define EMAIL_H
 #include <string>
-#include "mainwindow.h"
+#include <qstring.h>
 #include "database.h"
+#include "mainwindow.h"
 
 class email
 {
 public:
     email();
-    QString emailLower(QString e);
+    QString checkEmail(QString e);
+
 };
 
 #endif // EMAIL_H

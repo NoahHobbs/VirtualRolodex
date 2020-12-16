@@ -32,9 +32,9 @@ void MainWindow::on_SaveContactButton_clicked()
     Database();
     class name toCaps;
     class phone pFormat;
+    class email eFormat;
     QSqlQuery query;
     QString nameText = ui->NameTxtBox->toPlainText();
-
     QString phoneText = ui->PhoneTxtBox->toPlainText();
     QString emailText = ui->EmailTxtBox->toPlainText();
     //using regex to test user input
@@ -47,10 +47,11 @@ void MainWindow::on_SaveContactButton_clicked()
     if (nameMatch.hasMatch() && emailMatch.hasMatch() && phoneMatch.hasMatch()) {
         QString capsName = toCaps.capsName(nameText);
         QString formattedPhone = pFormat.checkPhone(phoneText);
+        QString formattedEmail = eFormat.checkEmail(emailText);
         query.prepare("INSERT INTO Contacts (name, phone, email) VALUES (:name, :phone, :email)");
         query.bindValue(":name", capsName);
         query.bindValue(":phone", formattedPhone);
-        query.bindValue(":email", emailText);
+        query.bindValue(":email", formattedEmail);
         query.exec();
         ui->EmailTxtBox->clear();
         ui->PhoneTxtBox->clear();

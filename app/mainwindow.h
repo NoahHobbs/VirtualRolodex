@@ -11,6 +11,7 @@
 #include <QInputDialog>
 #include "name.h"
 #include "phone.h"
+#include "email.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
